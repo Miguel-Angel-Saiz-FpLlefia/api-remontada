@@ -3,6 +3,7 @@ console.log("Hello, World!");
 import express from "express"; //
 import equipoRoutes from "./routes/equipos.js";
 import cors from "cors";
+import "dotenv/config";
 
 const app = express(); // Creamos nuestra app con express
 // Contiene todos los metodes de express
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 // });
 
 // Levantar el servidor
-app.listen(3000, () => {
-  console.log("Servidor corriendo en el puerto 3000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
