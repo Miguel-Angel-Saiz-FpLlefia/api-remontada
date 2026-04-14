@@ -3,7 +3,8 @@ console.log("Hello, World!");
 import express from "express"; //
 import equipoRoutes from "./routes/equipos.js";
 import cors from "cors";
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express(); // Creamos nuestra app con express
 // Contiene todos los metodes de express
@@ -13,7 +14,7 @@ app.use(cors());
 app.use("/api/equipos", equipoRoutes);
 
 app.get("/", (req, res) => {
-  res.send("api de la remontada" + process.env.EJEMPLO);
+  res.send("api de la remontada " + process.env.EJEMPLO);
   console.log("Petición recibida");
 });
 
