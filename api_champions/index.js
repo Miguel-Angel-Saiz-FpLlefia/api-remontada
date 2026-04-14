@@ -13,7 +13,7 @@ app.use(cors());
 app.use("/api/equipos", equipoRoutes);
 
 app.get("/", (req, res) => {
-  res.send("api de la remontada");
+  res.send("api de la remontada" + process.env.EJEMPLO);
   console.log("Petición recibida");
 });
 
